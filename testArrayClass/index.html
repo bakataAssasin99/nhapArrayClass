@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <title>Document</title>
+    <script src="app.js" ></script>
+</head>
+<body ng-controller="myController">
+    <div>
+        <select >
+            <optgroup value="classBoss" ng-repeat="class in ListClass" ng-if="class.parentID == 0" ng-init="classBoss = class.id" label="{{class.name}}">
+                <option value="classBoss" ng-repeat="class in ListClass" ng-if="class.parentID ==  classBoss">{{class.prefix}}{{class.name}}</option>
+            </optgroup>
+            
+        </select>
+    </div>
+</body>
+</html>
